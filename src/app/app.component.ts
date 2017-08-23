@@ -13,6 +13,11 @@ export class AppComponent {
     console.log(value);
   }
 
+  deleteArticle(article) {
+    let idx = this.data.indexOf(article);
+    this.data.splice(idx, 1);
+  }
+
   data = [
     {
       "id": 1,
