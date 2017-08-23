@@ -9,6 +9,7 @@ export class HeaderComponent implements OnInit {
 
   sitename = 'Hello World';
   sitelink = 'https://www.google.com/';
+  counter  = 10;
 
   constructor() { }
 
@@ -16,6 +17,7 @@ export class HeaderComponent implements OnInit {
   }
 
   changeTitle($event: MouseEvent) {
+    this.counter++;
     console.log($event);
     if ($event.ctrlKey) {
       this.sitename = 'The Will Will Web';

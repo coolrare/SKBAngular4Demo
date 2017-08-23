@@ -31,7 +31,7 @@
                 <h1>
                     <a [attr.data-anything]="sitename" [href]="sitelink">{{ sitename }}</a>
                 </h1>
-                <h3>記載著 Will 在網路世界的學習心得與技術分享</h3>
+                <h3 [class.highlight]="counter % 2 == 0" [style.font-size.px]="counter">記載著 Will 在網路世界的學習心得與技術分享</h3>
             </div>
 
             <div id="social-icons" class="pull-right social-icon">
