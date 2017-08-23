@@ -8,21 +8,7 @@
             <div id="ctl00_cphBody_PostList1_posts" class="posts">
 
                 <!-- Article START-->
-                <article *ngFor="let article of data" class="post" id="post0">
-                    <header class="post-header">
-                        <h2 class="post-title">
-                            <a [href]="article.href">{{ article.title }}</a>
-                        </h2>
-                        <div class="post-info clearfix">
-                            <span class="post-date"><i class="glyphicon glyphicon-calendar"></i>{{ article.date }}</span>
-                            <span class="post-author"><i class="glyphicon glyphicon-user"></i><a href="http://blog.miniasp.com/author/will.aspx">{{ article.author }}</a></span>
-                            <span class="post-category"><i class="glyphicon glyphicon-folder-close"></i>
-                              <a [href]="article['category-link']">{{ article.category }}</a></span>
-                        </div>
-                    </header>
-                    <section class="post-body text" [innerHTML]="article.summary">
-                    </section>
-                </article>
+                <app-article *ngFor="let item of data" [article]="item"></app-article>
                 <!-- Article END-->
 
             </div>
