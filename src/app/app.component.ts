@@ -8,4 +8,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'app';
   keyword = 'TEST';
+
+  doSearch(value) {
+    console.log(value);
+  }
 }
