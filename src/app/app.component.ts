@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { DataService } from './data.service';
+import { Observable } from "rxjs/Observable";
 
 @Component({
   selector: 'app-root',
@@ -10,12 +11,10 @@ export class AppComponent {
   title = 'app';
   keyword = 'TEST';
   data: any;
+  data$: Observable<any>;
 
   constructor(private datasvc: DataService) {
-    datasvc.load().subscribe(res => {
-      this.data = res.json();
-      console.log(this.data);
-    });
+    this.data$ = datasvc.load();
   }
 
   doSearch(value) {
@@ -23,8 +22,15 @@ export class AppComponent {
   }
 
   deleteArticle(article) {
-    let idx = this.data.indexOf(article);
-    this.data.splice(idx, 1);
+    // let idx = this.data.indexOf(article);
+    // this.data.splice(idx, 1);
+    this.datasvc.remove(article.id).subscribe( res => {
+      if (res.status == 200) {
+        console.log(res.json());
+      } else {
+        console.log(res.text());
+      }
+    });
   }
 
 }
