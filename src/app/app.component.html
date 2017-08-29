@@ -9,8 +9,7 @@
 
                 <!-- Article START-->
                 <app-article *ngFor="let item of data$|async"
-                    [article]="item"
-                    (delete)="deleteArticle($event)"></app-article>
+                    [article]="item"></app-article>
                 <!-- Article END-->
 
             </div>

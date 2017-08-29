@@ -20,17 +20,4 @@ export class AppComponent {
   doSearch(value) {
     console.log(value);
   }
-
-  deleteArticle(article) {
-    // let idx = this.data.indexOf(article);
-    // this.data.splice(idx, 1);
-    this.datasvc.remove(article.id).subscribe( res => {
-      if (res.status == 200) {
-        console.log(res.json());
-      } else {
-        console.log(res.text());
-      }
-    });
-  }
-
 }
