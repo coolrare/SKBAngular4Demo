@@ -12,7 +12,10 @@ export class AppComponent {
   data: any;
 
   constructor(private datasvc: DataService) {
-    this.data = datasvc.data;
+    datasvc.load().subscribe(res => {
+      this.data = res.json();
+      console.log(this.data);
+    });
   }
 
   doSearch(value) {
